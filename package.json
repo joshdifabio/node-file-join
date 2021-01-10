@@ -1,0 +1,40 @@
+{
+  "name": "file-join",
+  "version": "0.1.0",
+  "description": "A tiny library for doing SQL-like joins and fast key lookups on very big streams and files",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf lib",
+    "prepare": "npm run clean && npm run build -- --build tsconfig.publish.json"
+  },
+  "engines": {
+    "node": ">= 10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshdifabio/node-file-join.git"
+  },
+  "author": "Josh Di Fabio <joshdifabio@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joshdifabio/node-file-join/issues"
+  },
+  "homepage": "https://github.com/joshdifabio/node-file-join#readme",
+  "devDependencies": {
+    "@types/node": "^12.19.12",
+    "@types/ramda": "^0.27.34",
+    "@types/tmp": "^0.2.0",
+    "rimraf": "^3.0.2",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "ramda": "^0.27.1",
+    "tmp-promise": "^3.0.2"
+  }
+}

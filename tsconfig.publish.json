@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "strict": true,
+    "outDir": "lib",
+    "removeComments": true,
+    "target": "es2018",
+    "sourceMap": false,
+    "lib": ["ES2018", "ES2018.AsyncIterable"],
+    "declaration": true
+  },
+  "include": ["index.ts"]
+}

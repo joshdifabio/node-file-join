@@ -175,7 +175,7 @@ export function index<T, K extends ItemKey>(spec: SourceSpec<T, K>): IndexFn<T, 
         },
       };
     } catch (e) {
-      cleanUp();
+      await cleanUp();
       throw e;
     }
   };

@@ -100,14 +100,16 @@ export type JoinInput<S extends JoinSpec = JoinSpec> = {
   readonly [K in JoinSourceKeys<S>]: S[K] extends SourceSpec<infer T> ? SourceInput<T> : never
 };
 
-export type JoinResult<S extends JoinSpec = JoinSpec> = Index<JoinOutputItem<S>, InferJoinKey<S>>;
+// conditional type forces TS to resolve away JoinResult
+type JoinResult<S extends JoinSpec = JoinSpec> = 1 extends 1 ? Index<JoinOutputItem<S>, InferJoinKey<S>> : never;
 
-export type JoinOutputItem<S extends JoinSpec = JoinSpec> = {
+// conditional type forces TS to resolve away JoinOutputItem
+type JoinOutputItem<S extends JoinSpec = JoinSpec> = 1 extends 1 ? {
   readonly [K in keyof S]:
     S[K] extends SourceSpec<infer T> ? T[]
     : S[K] extends typeof ITEM_KEY ? InferJoinKey<S>
     : never
-};
+} : never;
 
 /**
  * INDEX
